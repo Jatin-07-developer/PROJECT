@@ -1,0 +1,70 @@
+{
+  "project": "ABTalks AI Interview Agent",
+  "context": "Hybrid local-first React SaaS app; scripted interview demo with no backend, external AI calls, payments, or image assets",
+  "phase_1_discovery": {
+    "audience": ["ABTalks AI Engineering Cohort candidates", "cohort mentors and reviewers", "admins configuring curriculum"],
+    "key_tasks": ["choose a candidate profile", "choose Mock, Practice, or Assessment mode", "complete an adaptive technical interview", "review local scores and recommendations", "upload curriculum, candidates, or technical spec JSON", "configure model/prompt settings without making API calls"],
+    "success_actions": ["Start interview", "finish at least 8 questions across 4+ curriculum days", "export a feedback report", "return to dashboard and resume locally"],
+    "emotion": "calm competence under pressure: the visual story moves from orientation, to focused challenge, to evidence-backed reflection",
+    "theme": "Support light and dark themes. Default dark for interview focus, with a persistent toggle and accessible contrast in both modes.",
+    "archetype": "Swiss & High-Contrast with a restrained performance-pro edge; use color as function, not decoration"
+  },
+  "phase_2_research": {
+    "references": [
+      {"source": "Godly / AI SaaS inspiration collections", "descriptors": ["clear value proposition and single primary CTA", "product proof visible above the fold", "sparse editorial composition rather than feature dumping"]},
+      {"source": "SaaSFrame dashboard patterns", "descriptors": ["modular widgets", "strong information hierarchy", "controls placed close to the data", "action-oriented summary before deep detail"]},
+      {"source": "Linear / Vercel / Perplexity product language", "descriptors": ["quiet surfaces", "hairline borders", "dense but legible status information", "keyboard-friendly interaction and restrained motion"]}
+    ],
+    "synthesis": "Fuse an oral-exam room, a Swiss editorial grid, and a calm command center: a narrow reading rail for the live question, a visible evidence timeline, and a report that feels like an annotated examiner's notebook."
+  },
+  "design_options": [
+    {"name": "Exam Room", "probability": 0.34, "direction": "dark graphite, paper-white type, signal vermilion for live state; cinematic focus and minimal chrome", "best_for": "Interview page and assessment mode"},
+    {"name": "Field Notes", "probability": 0.24, "direction": "warm bone light mode, ink navy, ochre annotations, editorial serif headings", "best_for": "Feedback report and candidate dashboard"},
+    {"name": "Signal Console", "probability": 0.18, "direction": "cool charcoal, electric blue status accents, technical grid borders and monospace metadata", "best_for": "Admin configuration and uploads"},
+    {"name": "Quiet Athletic", "probability": 0.14, "direction": "obsidian, white, blaze red progress cues, condensed impact headings", "best_for": "High-pressure assessment mode"},
+    {"name": "Cohort Atlas", "probability": 0.10, "direction": "light stone, deep forest ink, muted saffron topic markers, map-like curriculum day progression", "best_for": "Dashboard overview and curriculum navigation"}
+  ],
+  "chosen_direction": "Exam Room + Field Notes: dark-first interview focus with an editorial light report mode. This breaks the generic AI gradient pattern to make the candidate feel guided, not sold to.",
+  "typography": {
+    "heading": "Bodoni Moda or Cormorant Garamond, font-light/medium, tracking-tight; use only for landing, report, and section headings",
+    "body": "IBM Plex Sans, 400/500/600; use for UI, questions, labels, and readable long text",
+    "metadata": "IBM Plex Mono, 400/500; use for question IDs, curriculum day, timers, scores, and JSON status",
+    "rules": ["H1 text-4xl sm:text-5xl lg:text-6xl maximum", "H2 text-2xl sm:text-3xl lg:text-4xl", "labels uppercase text-xs tracking-[0.2em]", "headings leading-none; body leading-relaxed", "never use Inter, Roboto, or generic sans for headings"]
+  },
+  "colors": {
+    "light": {"background": "#F3F1EC", "surface": "#FFFDF8", "surfaceRaised": "#E9E6DF", "text": "#17212B", "mutedText": "#53606A", "border": "#D5D2C9", "primary": "#183A5A", "primaryText": "#FFFFFF", "signal": "#C64536", "success": "#2E694D", "warning": "#A46A1F"},
+    "dark": {"background": "#111417", "surface": "#181D21", "surfaceRaised": "#20272C", "text": "#F1EEE7", "mutedText": "#AAB2B7", "border": "#343C42", "primary": "#D8E6F2", "primaryText": "#15202A", "signal": "#F06452", "success": "#73B88E", "warning": "#E0A557"},
+    "rules": ["No full-screen gradients", "never use pure #000000 or #808080", "signal red only communicates live/attention/error states", "verify normal text at 4.5:1 and large text at 3:1", "do not use forbidden #7351B7 or dashboard teal #1B93A4"]
+  },
+  "visual_enhancers": ["subtle CSS grain using an aria-hidden pseudo-element at 3-5% opacity", "hairline grid lines on admin and dashboard regions", "soft layered shadows only on raised surfaces", "solid opaque or blurred glass header; never fully transparent", "thin red examiner mark beside active question", "custom scrollbar with tinted thumb and no gutter", "selection color using signal red with readable text"],
+  "navigation": {"desktop": "opaque/sticky header with ABTalks AI mark, Dashboard, Interview, Feedback, Admin links, theme toggle, and Start interview CTA", "mobile": "brand, theme toggle, and menu button; reveal links in an opaque Sheet, never hide desktop links", "header_classes": "sticky top-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border"},
+  "grids": {
+    "landing": "grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8 lg:gap-12; hero spans 8 columns, proof panel spans 4, leave one open cell",
+    "dashboard": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6; summary col-span-1, readiness chart col-span-2 row-span-2, recent activity col-span-1 row-span-2",
+    "interview": "grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10; question rail lg:col-span-7, progress/evidence rail lg:col-span-5",
+    "feedback": "grid-cols-1 md:grid-cols-8 gap-8; report hero md:col-span-5, score summary md:col-span-3, topic table full width",
+    "admin": "grid-cols-1 lg:grid-cols-4 gap-6; upload/settings col-span-1, JSON preview col-span-2, activity col-span-1",
+    "rules": ["grid items must be direct children", "align-items:start by default", "use p-6 or p-8 inside bordered containers", "do not fill every cell; preserve intentional breathing room"]
+  },
+  "layouts": {
+    "landing": ["left-aligned hero with overline 'ABTALKS AI COHORT'", "headline 'Practice the questions that production asks'", "short paragraph and Start interview primary CTA", "right-side stacked interview preview with 8-question counter and curriculum day markers", "three mode selector: Mock, Practice, Assessment", "how it works in three numbered steps", "final dark contrast-shift footer with large ABTalks AI wordmark"],
+    "candidate_selection": ["profile picker using Shadcn Select or searchable Command, not native select", "candidate identity row with avatar initials, completed days, strengths, weak areas", "mode cards with explicit selected state", "continue CTA disabled until profile and mode exist"],
+    "dashboard": ["welcome header and resume CTA", "readiness score, interviews completed, strongest topic, focus topic", "curriculum day rail with completed/current/locked states", "recent interview list and recommendation panel"],
+    "interview": ["top status bar: mode, question 03/08, elapsed timer, exit control", "large question text left aligned; follow-up transcript below", "answer textarea using Shadcn Textarea with character hint and keyboard submit affordance", "right rail has progress, curriculum topics, confidence pulse, local scoring rationale after submission", "show one question at a time; after submit reveal follow-up with a short entrance animation"],
+    "feedback": ["report header with candidate, mode, date and export actions", "overall score with plain-language interpretation", "topic score rows for RAG, Prompt Engineering, Vector Databases, MCP, Agentic AI, Deployment, Production Systems", "strengths and next practice recommendations", "question-by-question examiner notes and restart CTA"],
+    "admin": ["JSON upload dropzone built with Shadcn input/label and local FileReader", "tabs for Candidates, Curriculum, Technical Spec, Model/Prompt Settings", "opaque JSON preview with validation status", "settings clearly state LOCAL SCRIPTED MODE; no API key field by default", "reset local data action with AlertDialog"]
+  },
+  "components": {
+    "component_path": "/app/frontend/src/components/ui/",
+    "use": ["Button, Badge, Card selectively, Tabs, Progress, Textarea, Input, Select, Command, Sheet, AlertDialog, Switch, Tooltip, Sonner"],
+    "custom_js_components": ["AppShell.js", "LandingPage.js", "CandidatePicker.js", "ModeSelector.js", "InterviewRunner.js", "QuestionRail.js", "ScoreSummary.js", "FeedbackReport.js", "AdminWorkbench.js", "JsonUploadPanel.js", "ThemeToggle.js"],
+    "rules": ["Use .js/.jsx, not .tsx", "raw HTML/Tailwind is appropriate for marketing layout; use Shadcn logic for advanced interactions", "all buttons, links, inputs, menus, timers, scores, question text, errors and confirmation text need data-testid", "recommended IDs include landing-start-interview-button, candidate-profile-select, interview-submit-answer-button, interview-question-text, interview-progress-indicator, feedback-export-button, admin-json-upload-input, theme-toggle-button"]
+  },
+  "motion": {"entrance": "stagger direct grid children by 60ms with opacity and translate-y", "interaction": "specific transitions for transform, opacity, background-color, border-color; never transition-all", "interview": "question changes slide 8px horizontally; score reveal uses number count only when motion is allowed", "hover": "buttons lift 1px, bordered rows shift border signal color, cards lift -translate-y-1", "loading": "use skeleton bars and a pulsing live indicator, never a fake API spinner", "reduced_motion": "@media (prefers-reduced-motion: reduce) set animation-duration: .01ms, disable parallax and transform entrances", "decorative": "aria-hidden=true"},
+  "accessibility": ["keyboard reachable navigation and controls", "visible high-contrast focus-visible ring", "timer has text label and does not rely on color", "announce submitted answer and next question with aria-live", "textarea label is explicit", "do not place text over unreadable imagery; this app needs no imagery", "use semantic headings in order", "provide accessible status text for selected mode, completed days, score and upload validation", "support light/dark theme contrast and avoid pure transparent surfaces"],
+  "media": {"needed": false, "image_urls": [], "guidance": "No stock imagery is needed; use UI close-ups, grid, grain, and typographic hierarchy to keep the product focused and fast. Do not introduce placeholder image URLs."},
+  "3d_libraries": {"use": false, "reason": "This is a clarity-first dashboard/interview workflow; 3D would distract from timed reading and answer entry.", "allowed": []},
+  "data_and_local_behavior": {"persistence": "localStorage keys: abtalks-candidate, abtalks-mode, abtalks-progress, abtalks-responses, abtalks-feedback, abtalks-theme", "interview_engine": "script at least 8 primary questions across at least 4 curriculum days, with deterministic follow-ups selected from answer keywords/confidence/mistakes; no API calls", "scoring": "local rubric scoring for correctness, specificity, tradeoffs, production awareness and confidence; show rubric language in feedback", "uploads": "validate JSON shape in browser, show errors via Sonner and inline status, preserve last valid dataset", "export": "generate a printable report or client-side JSON download; label PDF-style print as local export"},
+  "instructions_to_main_agent": ["Implement the local-first flow end to end; do not add backend calls, payment, or AI provider SDKs.", "Make the first screen a professional landing page with a clear Start interview CTA.", "Use candidates.json as the profile source and provide a graceful local fallback only if upload/data is missing.", "Keep mode, theme, and interview progress resumable through localStorage.", "Use explicit empty, error, selected, disabled, submitting, completed, and exported states.", "Avoid generic centered layouts, purple AI gradients, emoji icons, excessive rounded cards, and oversized headings.", "Ensure every interactive and key informational element has a stable kebab-case data-testid.", "Test mobile at 390px and desktop at 1440px; interview answer area must remain usable with keyboard and touch.", "Make all surfaces opaque or appropriately blurred; never use complete transparent backgrounds behind content.", "Use Sonner for upload/export/reset feedback and Shadcn components for dialogs, select, tabs, textarea, and inputs."],
+  "GENERAL_UI_UX_DESIGN_GUIDELINES": ["Content should be left aligned by default and paced with generous spacing.", "Color is functional: primary for actions, signal for live attention, green for verified progress, amber for caution.", "Every interactive element has hover, active, focus, disabled, and reduced-motion behavior.", "Use nested radii where helpful, maximum 8px for dashboard surfaces; pills only for statuses and primary CTAs.", "Prefer borders and tonal surfaces over shadows; use shadows only to establish layer hierarchy.", "Never use universal transition: all.", "Never use assistant emoji characters as icons; use lucide-react or existing UI icons.", "Customize scrollbars and preserve browser zoom/reflow.", "Keep copy specific, humane, and examiner-like; avoid claims of real AI when the experience is scripted.", "Clearly disclose LOCAL SCRIPTED MODE anywhere model/prompt settings appear."]
+}
