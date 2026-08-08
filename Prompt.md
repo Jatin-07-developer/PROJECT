@@ -688,3 +688,7 @@ The final application should be polished enough to demonstrate at a professional
 
 Now make a website without integrating backend to this and also make this a free (without any payment) website 
 make all the interview questions scripted so that there is no need to call the api this can save me from paying money to different ai for making api calls to them also make this website in such a way so that it can be run on vs code and if i want to deploy this site then this can be deployed easily
+
+
+
+// Some extra steps that i have taken while building this site ...
